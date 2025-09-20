@@ -5,7 +5,7 @@ import '../../index.css';
 import './personal-commitment-page.css';
 
 interface PersonalCommitmentPageProps {
-  onClick: () => void;
+  onClick: (goal: string) => void;
 }
 
 const PersonalCommitmentPage = ({ onClick }: PersonalCommitmentPageProps): React.ReactNode => {
@@ -13,9 +13,7 @@ const PersonalCommitmentPage = ({ onClick }: PersonalCommitmentPageProps): React
 
   const handleSubmit = () => {
     if (goal.trim()) {
-      // Here you could save the goal or perform other actions
-      console.log('User goal:', goal);
-      onClick();
+      onClick(goal);
     }
   };
 

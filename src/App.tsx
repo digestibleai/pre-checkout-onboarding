@@ -4,11 +4,13 @@ import { ProblemAgitationPage } from './pages/problem-agitation/problem-agitatio
 import { PersonalCommitmentPage } from './pages/personal-commitment/personal-commitment-page';
 import { SocialProofPage } from './pages/social-proof/social-proof-page';
 import { ContentPreviewPage } from './pages/content-preview/content-preview-page';
+import { ValuePropPage } from './pages/value-prop/value-prop-page';
 import './fonts.css'
 import './App.css'
 
 const App = (): React.ReactNode => {
   const [page, setPage] = useState<string>('problem-agitation');
+  const [goal, setGoal] = useState<string>('');
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   const [displayPage, setDisplayPage] = useState<string>('problem-agitation');
 
@@ -21,7 +23,7 @@ const App = (): React.ReactNode => {
       setPage(newPage);
       setDisplayPage(newPage);
       setIsTransitioning(false);
-    }, 300);
+    }, 500);
   };
 
   const renderPage = () => {
@@ -29,11 +31,16 @@ const App = (): React.ReactNode => {
       case 'problem-agitation':
         return <ProblemAgitationPage onClick={() => { handlePageChange('personal-commitment') }} />;
       case 'personal-commitment':
-        return <PersonalCommitmentPage onClick={() => { handlePageChange('social-proof') }} />;
+        return <PersonalCommitmentPage onClick={(userGoal: string) => {
+          setGoal(userGoal);
+          handlePageChange('social-proof');
+        }} />;
       case 'social-proof':
         return <SocialProofPage onClick={() => { handlePageChange('content-preview') }} />;
       case 'content-preview':
-        return <ContentPreviewPage onClick={() => { handlePageChange('') }} />;
+        return <ContentPreviewPage onClick={() => { handlePageChange('value-prop') }} />;
+      case 'value-prop':
+        return <ValuePropPage onClick={() => { handlePageChange('') }} goal={goal} />;
       default:
         return <></>;
     }
