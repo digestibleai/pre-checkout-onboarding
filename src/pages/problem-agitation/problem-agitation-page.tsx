@@ -5,7 +5,11 @@ import '../../index.css';
 import image from '../../assets/problem-agitation.png';
 import './problem-agitation-page.css';
 
-const ProblemAgitationPage = (): React.ReactNode => {
+interface ProblemAgitationPageProps {
+  onClick: () => void;
+}
+
+const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.ReactNode => {
   return (
     <div className="problem-agitation-container">
       <div className="content-row">
@@ -28,7 +32,7 @@ const ProblemAgitationPage = (): React.ReactNode => {
         </div>
       </div>
       <div className="button-section">
-        <NavButton onClick={() => { }} text="Next: Check My AI Readiness →" />
+        <NavButton onClick={onClick} text="Next: Check My AI Readiness →" />
       </div>
     </div>
   );
