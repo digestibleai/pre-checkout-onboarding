@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Reset default margins for paragraph elements */
@@ -13,4 +15,47 @@ p {
 
 .headline {
   color: rgb(1, 63, 50);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  :root {
+    padding: 16px;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .headline {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    padding: 12px;
+  }
+}
+
+/* Prevent zoom on input focus for mobile */
+@media screen and (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* Improve touch targets */
+@media (max-width: 768px) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Smooth scrolling for mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
 }

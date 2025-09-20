@@ -3,14 +3,42 @@
   border: none;
   border-radius: 16px;
   color: white;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 12px 24px;
   margin-top: 24px;
   height: 48px;
   font-size: 16px;
+  min-width: 200px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .nav-button:hover {
   background-color: rgb(1, 63, 50, 0.8);
   cursor: pointer;
+  transform: translateY(-1px);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .nav-button {
+    width: 100%;
+    max-width: 300px;
+    height: 52px;
+    font-size: 16px;
+    padding: 14px 24px;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-button {
+    height: 56px;
+    font-size: 15px;
+    padding: 16px 20px;
+    margin-top: 24px;
+  }
 }
