@@ -27,9 +27,9 @@ const App = (): React.ReactNode => {
     switch (displayPage) {
       case 'problem-agitation':
         return <ProblemAgitationPage onClick={() => { handlePageChange('personal-commitment') }} />;
-      case 'personal-commitment':
-        return <SocialProofPage onClick={() => { handlePageChange('content-preview') }} />;
       case 'social-proof':
+        return <SocialProofPage onClick={() => { handlePageChange('content-preview') }} />;
+      case 'content-preview':
         return <ContentPreviewPage onClick={() => { handlePageChange('') }} />;
       default:
         return <></>;
