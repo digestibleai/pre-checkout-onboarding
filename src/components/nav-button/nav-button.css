@@ -22,6 +22,20 @@
   transform: translateY(0);
 }
 
+.nav-button:disabled,
+.nav-button.disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.nav-button:disabled:hover,
+.nav-button.disabled:hover {
+  background-color: #ccc;
+  transform: none;
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .nav-button {
