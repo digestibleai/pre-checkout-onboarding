@@ -16,12 +16,15 @@ const SocialProofPage = ({ onClick }: SocialProofPageProps): React.ReactNode => 
         <div className="headline-section">
           <div className="headline">
             <p className="poppins-black" style={{ fontSize: 48, marginBottom: 24 }}>
-              Lessons That Actually Go Deep
+              Join 6,000+<br />
+              Professionals <br />
+              Already Learning AI <br />
             </p>
             <p className="poppins-regular" style={{ fontSize: 24, marginBottom: 24 }}>
-              Not another surface-level AI overview. Master specific tools, workflows, <br />
-              and prompts that work in real business situations. In your first 3 days, <br />
-              <b>you’ll master AI such as prompting, research and automation using:</b>
+              Thousands of users are mastering AI daily on our platform...
+            </p>
+            <p className="poppins-regular" style={{ fontSize: 24 }}>
+              Now get the full systematic training to 10x your career career.
             </p>
           </div>
         </div>
@@ -30,7 +33,7 @@ const SocialProofPage = ({ onClick }: SocialProofPageProps): React.ReactNode => 
         </div>
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text="Next: What You'll Master →" />
+        <NavButton onClick={onClick} text="Next: See What You'll Master →" />
       </div>
     </div>
   );

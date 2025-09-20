@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { PersonalCommitmentPage } from './pages/personal-commitment/personal-commitment-page'
 import { ProblemAgitationPage } from './pages/problem-agitation/problem-agitation-page'
+import { ContentPreviewPage } from './pages/content-preview/content-preview-page';
 import { SocialProofPage } from './pages/social-proof/social-proof-page';
 import './fonts.css'
 import './App.css'
@@ -28,9 +28,9 @@ const App = (): React.ReactNode => {
       case 'problem-agitation':
         return <ProblemAgitationPage onClick={() => { handlePageChange('personal-commitment') }} />;
       case 'personal-commitment':
-        return <PersonalCommitmentPage onClick={() => { handlePageChange('social-proof') }} />;
+        return <SocialProofPage onClick={() => { handlePageChange('content-preview') }} />;
       case 'social-proof':
-        return <SocialProofPage onClick={() => { handlePageChange('') }} />;
+        return <ContentPreviewPage onClick={() => { handlePageChange('') }} />;
       default:
         return <></>;
     }

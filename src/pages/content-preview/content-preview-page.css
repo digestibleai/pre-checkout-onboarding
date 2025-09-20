@@ -1,4 +1,4 @@
-.personal-commitment-container {
+.content-preview-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +40,7 @@
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
-  .personal-commitment-container {
+  .social-proof-container {
     gap: 20px;
     text-align: center;
   }
@@ -74,15 +74,10 @@
     font-size: 18px !important;
     line-height: 1.4;
   }
-  
-  .headline-section span {
-    font-size: 18px !important;
-    line-height: 1.4;
-  }
 }
 
 @media (max-width: 480px) {
-  .personal-commitment-container {
+  .social-proof-container {
     gap: 16px;
   }
   
@@ -99,10 +94,6 @@
   .headline-section p:nth-child(2) {
     font-size: 16px !important;
   }
-
-  .headline-section p:nth-child(3) {
-    font-size: 16px !important;
-  }
   
   .image-section {
     max-width: 250px;
@@ -115,8 +106,7 @@
     font-size: 24px !important;
   }
   
-  .headline-section p:nth-child(2),
-  .headline-section p:nth-child(3) {
+  .headline-section p:nth-child(2) {
     font-size: 14px !important;
   }
 }
