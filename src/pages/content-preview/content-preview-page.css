@@ -40,7 +40,7 @@
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
-  .social-proof-container {
+  .content-preview-container {
     gap: 20px;
     text-align: center;
   }
@@ -77,7 +77,7 @@
 }
 
 @media (max-width: 480px) {
-  .social-proof-container {
+  .content-preview-container {
     gap: 16px;
   }
   
