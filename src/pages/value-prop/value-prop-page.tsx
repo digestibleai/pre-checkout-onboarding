@@ -7,7 +7,6 @@ import './value-prop-page.css';
 
 interface ValuePropPageProps {
   goal: string;
-  onClick: () => void;
 }
 
 const ListBulletIcon = () => {
@@ -16,7 +15,7 @@ const ListBulletIcon = () => {
   )
 }
 
-const ValuePropPage = ({ goal, onClick }: ValuePropPageProps): React.ReactNode => {
+const ValuePropPage = ({ goal }: ValuePropPageProps): React.ReactNode => {
   return (
     <>
       <span className="poppins-black" style={{ color: 'rgb(1, 63, 50)', fontSize: 48 }}>Start Your AI Transformation Today</span>
