@@ -24,6 +24,10 @@ const App = (): React.ReactNode => {
     }, 500);
   };
 
+  const redirect = () => {
+    window.open('https://www.google.com', '_blank');
+  }
+
   const renderPage = () => {
     switch (displayPage) {
       case 'problem-agitation':
@@ -38,7 +42,7 @@ const App = (): React.ReactNode => {
       case 'content-preview':
         return <ContentPreviewPage onClick={() => { handlePageChange('value-prop') }} />;
       case 'value-prop':
-        return <ValuePropPage onClick={() => { handlePageChange('') }} goal={goal} />;
+        return <ValuePropPage onClick={redirect} goal={goal} />;
       default:
         return <></>;
     }

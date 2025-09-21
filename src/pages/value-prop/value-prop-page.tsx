@@ -52,7 +52,12 @@ const ValuePropPage = ({ goal, onClick }: ValuePropPageProps): React.ReactNode =
         </div>
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text="Start my Free Trial! →" />
+        <NavButton
+          href="https://www.google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          text="Start my Free Trial! →"
+        />
       </div>
     </>
   );
