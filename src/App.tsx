@@ -9,18 +9,16 @@ import './fonts.css'
 import './App.css'
 
 const App = (): React.ReactNode => {
-  const [page, setPage] = useState<string>('problem-agitation');
   const [goal, setGoal] = useState<string>('');
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   const [displayPage, setDisplayPage] = useState<string>('problem-agitation');
 
   const handlePageChange = (newPage: string) => {
-    if (newPage === page) return;
+    if (newPage === displayPage) return;
 
     setIsTransitioning(true);
 
     setTimeout(() => {
-      setPage(newPage);
       setDisplayPage(newPage);
       setIsTransitioning(false);
     }, 500);

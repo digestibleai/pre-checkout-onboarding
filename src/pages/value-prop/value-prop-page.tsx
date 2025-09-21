@@ -2,6 +2,8 @@ import React from 'react';
 import CheckIcon from '@mui/icons-material/Check';
 import { NavButton } from '../../components/nav-button/nav-button';
 import '../../fonts.css';
+import Arrow from '../../assets/arrow.png';
+import './value-prop-page.css';
 
 interface ValuePropPageProps {
   goal: string;
@@ -16,16 +18,19 @@ const ListBulletIcon = () => {
 
 const ValuePropPage = ({ goal, onClick }: ValuePropPageProps): React.ReactNode => {
   return (
-    <div>
+    <>
       <span className="poppins-black" style={{ color: 'rgb(1, 63, 50)', fontSize: 48 }}>Start Your AI Transformation Today</span>
-      <div style={{ display: 'flex', flexDirection: 'row', gap: '16px' }}>
-        <div style={{ backgroundColor: 'rgb(76, 140, 156)', borderRadius: 16, padding: 16, boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)' }}>
-          <p className="poppins-extrabold">Your AI Goal:</p>
-          <p className=".poppins-regular-italic">Let's achieve it together...</p>
-          <p className="poppings-extrabold">{goal}</p>
+      <div className="containers-wrapper">
+        <div className="goal-container">
+          <p className="poppins-extrabold" style={{ fontSize: 32 }}>Your AI Goal:</p>
+          <p className="poppins-regular-italic" style={{ fontSize: 24 }}>Let's achieve it together...</p>
+          <p className="poppins-extrabold" style={{ fontSize: 24, fontStyle: 'italic' }}>"{goal}"</p>
         </div>
-        <div>
-          <p className="poppins-extrabold"><s>$29</s> $5.99/month</p>
+        <div className="arrow-container">
+          <img src={Arrow} alt="Arrow" />
+        </div>
+        <div className="value-prop-container">
+          <p className="poppins-extrabold" style={{ fontSize: 32 }}><s>$29</s> $5.99/month</p>
           <ul style={{ listStyle: 'none', padding: 0, margin: '16px 0' }}>
             <li style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
               <ListBulletIcon />
@@ -49,7 +54,7 @@ const ValuePropPage = ({ goal, onClick }: ValuePropPageProps): React.ReactNode =
       <div className="button-section">
         <NavButton onClick={onClick} text="Start my Free Trial! →" />
       </div>
-    </div>
+    </>
   );
 };
 
