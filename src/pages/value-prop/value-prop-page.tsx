@@ -52,7 +52,7 @@ const ValuePropPage = ({ goal }: ValuePropPageProps): React.ReactNode => {
       </div>
       <div className="button-section">
         <NavButton
-          href="https://www.google.com"
+          href="https://www.digestibly.ai/offers/rXwTSUjT/checkout"
           target="_blank"
           rel="noopener noreferrer"
           text="Start my Free Trial! →"
