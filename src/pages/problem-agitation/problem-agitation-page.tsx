@@ -16,15 +16,23 @@ const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.Rea
         <div className="headline-section">
           <div className="headline">
             <p className="poppins-black" style={{ fontSize: 48, marginBottom: 24 }}>
-              Why 69% of Workers See <br />
-              AI Skills as Their <br />
-              Promotion Path <br />
+              While You're Reading
+              This, Your Colleagues Are
+              Already 3x More Productive
             </p>
-            <p className="poppins-regular" style={{ fontSize: 24, marginBottom: 24 }}>
-              While you're reading this, your colleagues <br />
-              are already using AI to work 3x faster.
+            <p className="poppins-regular" style={{ fontSize: 16, marginBottom: 24 }}>
+              Kevin was shipping AI models at AWS that generated $20M+ in revenue. Reyhan builds AI systems for Fortune 500 companies.
             </p>
-            <span className="poppins-regular" style={{ fontSize: 24 }}>Click <b>'Next'</b> to see where you stand.</span>
+            <p className="poppins-regular" style={{ fontSize: 16 }}>
+              But they kept witnessing the same frustrating pattern: brilliant professionals watching from the sidelines
+              as their tech-savvy colleagues leveraged AI to work faster, smarter, and get promoted first.
+            </p>
+            <p className="poppins-regular" style={{ fontSize: 16 }}>
+              The reason? AI education was either impossibly technical or ridiculously expensive
+            </p>
+            <p className="poppins-regular" style={{ fontSize: 16 }}>
+              That's when they came up with an idea that would change everything...
+            </p>
           </div>
         </div>
         <div className="image-section">
@@ -32,7 +40,7 @@ const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.Rea
         </div>
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text="Next: Check My AI Readiness →" />
+        <NavButton onClick={onClick} text="Next: See What They Built Together →" />
       </div>
     </div>
   );
