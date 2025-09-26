@@ -6,6 +6,7 @@ import { PersonalCommitmentPage } from './pages/personal-commitment/personal-com
 import { SocialProofPage } from './pages/social-proof/social-proof-page';
 import { ContentPreviewPage } from './pages/content-preview/content-preview-page';
 import { ValuePropPage } from './pages/value-prop/value-prop-page';
+import { GoalPage } from './pages/goal/goal-page';
 import './fonts.css'
 import './App.css'
 
@@ -34,14 +35,16 @@ const App = (): React.ReactNode => {
       case 'personal-commitment':
         return <PersonalCommitmentPage onClick={(userGoal: string) => {
           setGoal(userGoal);
-          handlePageChange('social-proof');
+          handlePageChange('goal');
         }} />;
       case 'social-proof':
-        return <SocialProofPage onClick={() => { handlePageChange('content-preview') }} />;
+        return <SocialProofPage onClick={() => { handlePageChange('personal-commitment') }} />;
       case 'content-preview':
         return <ContentPreviewPage onClick={() => { handlePageChange('value-prop') }} />;
       case 'value-prop':
         return <ValuePropPage goal={goal} />;
+      case 'goal':
+        return <GoalPage goal={goal} onClick={() => { handlePageChange('content-preview') }} />;
       default:
         return <></>;
     }
