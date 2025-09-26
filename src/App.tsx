@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { ProblemAgitationPage } from './pages/problem-agitation/problem-agitation-page'
+import { OurStoryPage } from './pages/our-story/our-story-page';
 import { PersonalCommitmentPage } from './pages/personal-commitment/personal-commitment-page';
 import { SocialProofPage } from './pages/social-proof/social-proof-page';
 import { ContentPreviewPage } from './pages/content-preview/content-preview-page';
@@ -27,7 +28,9 @@ const App = (): React.ReactNode => {
   const renderPage = () => {
     switch (displayPage) {
       case 'problem-agitation':
-        return <ProblemAgitationPage onClick={() => { handlePageChange('personal-commitment') }} />;
+        return <ProblemAgitationPage onClick={() => { handlePageChange('our-story') }} />;
+      case 'our-story':
+        return <OurStoryPage onClick={() => { handlePageChange('social-proof') }} />;
       case 'personal-commitment':
         return <PersonalCommitmentPage onClick={(userGoal: string) => {
           setGoal(userGoal);
