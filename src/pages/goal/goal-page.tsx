@@ -12,21 +12,23 @@ const GoalPage = ({ goal, onClick }: GoalPageProps): React.ReactNode => {
   return (
     <div className="goal-page-container">
       <div className="content-section">
-        <p className="poppins-black" style={{ color: 'rgb(1, 63, 50)', fontSize: 40 }}>
+        <p className="poppins-black goal-headline" style={{ color: 'rgb(1, 63, 50)' }}>
           We Update Our Lessons Every Week
         </p>
-        <span className="poppins-extrabold" style={{ color: 'rgb(1, 63, 50)', fontSize: 32 }}> Your AI Goal: </span>
-        <p className="poppins-regular-italic" style={{ color: 'rgb(1, 63, 50)', fontSize: 24 }}>
+        <span className="poppins-extrabold goal-subheading" style={{ color: 'rgb(1, 63, 50)' }}> Your AI Goal: </span>
+        <p className="poppins-regular-italic goal-user-goal" style={{ color: 'rgb(1, 63, 50)' }}>
           {goal}
         </p>
-        <p className="poppins-regular" style={{ fontSize: 16 }}>
+        <p className="poppins-regular goal-body-text">
           We have the <b>exact, up-to-date roadmap to get you there.</b> Not just theory from 2023.
         </p>
       </div>
       <div className="image-section">
         <img src={image} alt="Goal" />
       </div>
-      <NavButton onClick={onClick} text="Next: Take a Peek at Our Lessons →" />
+      <div className="button-section">
+        <NavButton onClick={onClick} text="Next: Take a Peek at Our Lessons →" />
+      </div>
     </div>
   );
 };
