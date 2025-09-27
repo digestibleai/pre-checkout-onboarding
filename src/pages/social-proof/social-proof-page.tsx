@@ -12,7 +12,7 @@ interface SocialProofPageProps {
 const SocialProofPage = ({ onClick }: SocialProofPageProps): React.ReactNode => {
   return (
     <div className="social-proof-container">
-      <div className="content-row">
+      <div className="social-proof-content-row">
         <div className="image-section">
           <img src={image} alt="Social Proof" />
         </div>

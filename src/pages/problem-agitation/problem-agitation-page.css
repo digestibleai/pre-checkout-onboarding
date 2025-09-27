@@ -7,29 +7,19 @@
   margin: 0 auto;
 }
 
-.content-row {
+.problem-agitation-content-row {
   display: flex;
-  align-items: flex-start;
+  flex-direction: row;
   gap: 40px;
   width: 100%;
 }
 
 .headline-section {
-  flex: 1;
-  min-width: 0; /* Prevents flex item from overflowing */
+  width: 50%;
 }
 
 .image-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
+  width: 50%;
 }
 
 .button-section {
