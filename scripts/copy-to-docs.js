@@ -79,6 +79,14 @@ try {
     fs.writeFileSync(cnamePath, cnameContent);
   }
 
+  // Copy favicon from src/assets to docs root
+  const faviconSrc = path.join('src', 'assets', 'favicon.png');
+  const faviconDest = path.join('docs', 'favicon.png');
+  if (fs.existsSync(faviconSrc)) {
+    console.log('📄 Copying favicon...');
+    fs.copyFileSync(faviconSrc, faviconDest);
+  }
+
   console.log('✅ Deployment completed successfully!');
   console.log('📄 Files copied to docs/ directory for GitHub Pages');
 
