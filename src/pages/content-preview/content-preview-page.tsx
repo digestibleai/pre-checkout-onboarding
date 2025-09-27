@@ -13,24 +13,21 @@ const ContentPreviewPage = ({ onClick }: ContentPreviewPageProps): React.ReactNo
   return (
     <div className="content-preview-container">
       <div className="content-row">
-        <div className="headline-section">
-          <div className="headline">
-            <p className="poppins-black" style={{ fontSize: 48, marginBottom: 24 }}>
-              Lessons That Actually Go Deep
-            </p>
-            <p className="poppins-regular" style={{ fontSize: 24, marginBottom: 24 }}>
-              Not another surface-level AI overview. Master specific tools, workflows, <br />
-              and prompts that work in real business situations. In your first 3 days, <br />
-              <b>you’ll master AI such as prompting, research and automation using:</b>
-            </p>
-          </div>
-        </div>
-        <div className="image-section">
-          <img src={image} alt="Content Preview" />
-        </div>
+        <p className="poppins-black" style={{ color: 'rgb(1, 63, 50)', fontSize: 40 }}>
+          Lessons That Actually Go Deep, Here's What You'll Master
+        </p>
+        <p className="poppins-regular" style={{ fontSize: 24 }}>
+          Not another surface-level AI overview. You will achieve your AI goal by learning
+          specific tools, workflows, and prompts that work in real business situations.
+          In your first 3 days,
+          <b> you’ll master AI such as prompting, research and automation with the latest, cutting-edge tools: </b>
+        </p>
+      </div>
+      <div className="image-section">
+        <img src={image} alt="Content Preview" />
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text="Next: What You'll Master →" />
+        <NavButton onClick={onClick} text="Start Your AI Transformation! →" />
       </div>
     </div>
   );
