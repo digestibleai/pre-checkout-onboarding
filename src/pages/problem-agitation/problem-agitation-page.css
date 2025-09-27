@@ -6,7 +6,6 @@
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
-  overflow-y: auto;
 }
 
 .problem-agitation-content-row {
@@ -51,7 +50,9 @@
     gap: 20px;
     text-align: center;
     padding: 20px;
-    overflow-y: auto;
+    min-height: auto;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .problem-agitation-content-row {
@@ -80,6 +81,8 @@
   
   .button-section {
     order: 3;
+    margin-top: 20px;
+    padding-bottom: 20px;
   }
   
   .problem-agitation-headline {
