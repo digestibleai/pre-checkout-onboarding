@@ -27,6 +27,21 @@
   width: 100%;
 }
 
+/* Content preview specific paragraph styling */
+.content-preview-headline {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.content-preview-body-text {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.content-preview-body-text:last-child {
+  margin-bottom: 0;
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .content-preview-container {
@@ -53,15 +68,20 @@
     order: 3;
   }
   
-  .headline-section p {
+  .content-preview-headline {
     font-size: 32px !important;
     line-height: 1.2;
     margin-bottom: 20px !important;
   }
   
-  .headline-section p:nth-child(2) {
+  .content-preview-body-text {
     font-size: 18px !important;
     line-height: 1.4;
+    margin-bottom: 20px !important;
+  }
+  
+  .content-preview-body-text:last-child {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -74,14 +94,20 @@
     gap: 20px;
   }
   
-  .headline-section p {
+  .content-preview-headline {
     font-size: 28px !important;
     line-height: 1.1;
     margin-bottom: 16px !important;
   }
   
-  .headline-section p:nth-child(2) {
+  .content-preview-body-text {
     font-size: 16px !important;
+    line-height: 1.4;
+    margin-bottom: 16px !important;
+  }
+  
+  .content-preview-body-text:last-child {
+    margin-bottom: 0 !important;
   }
   
   .image-section {
@@ -91,11 +117,11 @@
 
 /* Very small screens */
 @media (max-width: 360px) {
-  .headline-section p {
+  .content-preview-headline {
     font-size: 24px !important;
   }
   
-  .headline-section p:nth-child(2) {
+  .content-preview-body-text {
     font-size: 14px !important;
   }
 }

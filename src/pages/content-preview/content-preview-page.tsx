@@ -13,14 +13,14 @@ const ContentPreviewPage = ({ onClick }: ContentPreviewPageProps): React.ReactNo
   return (
     <div className="content-preview-container">
       <div className="content-row">
-        <p className="poppins-black" style={{ color: 'rgb(1, 63, 50)', fontSize: 40 }}>
+        <p className="poppins-black content-preview-headline" style={{ color: 'rgb(1, 63, 50)' }}>
           Lessons That Actually Go Deep, Here's What You'll Master
         </p>
-        <p className="poppins-regular" style={{ fontSize: 24 }}>
+        <p className="poppins-regular content-preview-body-text">
           Not another surface-level AI overview. You will achieve your AI goal by learning
           specific tools, workflows, and prompts that work in real business situations.
           In your first 3 days,
-          <b> you’ll master AI such as prompting, research and automation with the latest, cutting-edge tools: </b>
+          <b> you'll master AI such as prompting, research and automation with the latest, cutting-edge tools: </b>
         </p>
       </div>
       <div className="image-section">

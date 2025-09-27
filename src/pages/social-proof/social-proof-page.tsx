@@ -18,18 +18,18 @@ const SocialProofPage = ({ onClick }: SocialProofPageProps): React.ReactNode => 
         </div>
         <div className="headline-section">
           <div className="headline">
-            <p className="poppins-black" style={{ fontSize: 40, marginBottom: 24 }}>
+            <p className="poppins-black social-proof-headline">
               What's Stopping You From Mastering AI? (6,000+ Professionals Already Did With Us)
             </p>
-            <p className="poppins-regular" style={{ marginBottom: 24 }}>
+            <p className="poppins-regular social-proof-body-text">
               Our newsletter grows by hundreds weekly because we make AI actually understandable.
             </p>
-            <p className="poppins-regular" style={{ marginBottom: 24 }}>
+            <p className="poppins-regular social-proof-body-text">
               But you're here because you want more than tips—<b>you want transformation.</b>
               The professionals already inside our platform have one thing in common:
               they wrote down their biggest AI goal and committed to achieving it. What's yours?
             </p>
-            <p className="poppins-regular-italic">
+            <p className="poppins-regular-italic social-proof-body-text">
               From Google executives to startup founders to high school teachers,
               they all started with writing down one goal...
             </p>

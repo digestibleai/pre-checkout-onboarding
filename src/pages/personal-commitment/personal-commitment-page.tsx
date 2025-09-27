@@ -21,10 +21,10 @@ const PersonalCommitmentPage = ({ onClick }: PersonalCommitmentPageProps): React
     <div className="personal-commitment-container">
       <div className="headline-section">
         <div className="headline">
-          <p className="poppins-black" style={{ fontSize: 48, marginBottom: 24 }}>
+          <p className="poppins-black personal-commitment-headline">
             What's Your AI Learning Goal?
           </p>
-          <p className="poppins-regular" style={{ fontSize: 24 }}>
+          <p className="poppins-regular personal-commitment-body-text">
             Write your biggest AI goal below. <br />
             We'll create your personalized learning path in the next step.
           </p>

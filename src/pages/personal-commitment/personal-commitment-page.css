@@ -48,6 +48,21 @@
   font-style: italic;
 }
 
+/* Personal commitment specific paragraph styling */
+.personal-commitment-headline {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.personal-commitment-body-text {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.personal-commitment-body-text:last-child {
+  margin-bottom: 0;
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .personal-commitment-container {
@@ -55,20 +70,20 @@
     padding: 0 20px;
   }
   
-  .headline-section p {
+  .personal-commitment-headline {
     font-size: 32px !important;
     line-height: 1.2;
     margin-bottom: 20px !important;
   }
   
-  .headline-section p:nth-child(2) {
+  .personal-commitment-body-text {
     font-size: 18px !important;
     line-height: 1.4;
+    margin-bottom: 20px !important;
   }
   
-  .headline-section span {
-    font-size: 18px !important;
-    line-height: 1.4;
+  .personal-commitment-body-text:last-child {
+    margin-bottom: 0 !important;
   }
   
   .input-container {
@@ -87,18 +102,20 @@
     padding: 0 16px;
   }
   
-  .headline-section p {
+  .personal-commitment-headline {
     font-size: 28px !important;
     line-height: 1.1;
     margin-bottom: 16px !important;
   }
   
-  .headline-section p:nth-child(2) {
+  .personal-commitment-body-text {
     font-size: 16px !important;
+    line-height: 1.4;
+    margin-bottom: 16px !important;
   }
   
-  .headline-section span {
-    font-size: 16px !important;
+  .personal-commitment-body-text:last-child {
+    margin-bottom: 0 !important;
   }
   
   .input-container {
@@ -113,12 +130,11 @@
 
 /* Very small screens */
 @media (max-width: 360px) {
-  .headline-section p {
+  .personal-commitment-headline {
     font-size: 24px !important;
   }
   
-  .headline-section p:nth-child(2),
-  .headline-section span {
+  .personal-commitment-body-text {
     font-size: 14px !important;
   }
   

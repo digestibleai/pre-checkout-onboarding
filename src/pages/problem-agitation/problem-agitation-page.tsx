@@ -14,22 +14,22 @@ const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.Rea
     <div className="problem-agitation-container">
       <div className="problem-agitation-content-row">
         <div className="headline-section">
-          <p className="poppins-black" style={{ color: 'rgb(1, 63, 50)', fontSize: 48, marginBottom: 24 }}>
+          <p className="poppins-black problem-agitation-headline" style={{ color: 'rgb(1, 63, 50)' }}>
             While You're Reading
             This, Your Colleagues Are
             Already 3x More Productive
           </p>
-          <p className="poppins-regular" style={{ fontSize: 16, marginBottom: 24 }}>
+          <p className="poppins-regular problem-agitation-body-text">
             Kevin was shipping AI models at AWS that generated $20M+ in revenue. Reyhan builds AI systems for Fortune 500 companies.
           </p>
-          <p className="poppins-regular" style={{ fontSize: 16, marginBottom: 24 }}>
+          <p className="poppins-regular problem-agitation-body-text">
             But they kept witnessing the same frustrating pattern: brilliant professionals watching from the sidelines
             as their tech-savvy colleagues leveraged AI to work faster, smarter, and get promoted first.
           </p>
-          <p className="poppins-regular" style={{ fontSize: 16, marginBottom: 24 }}>
+          <p className="poppins-regular problem-agitation-body-text">
             The reason? AI education was either impossibly technical or ridiculously expensive
           </p>
-          <p className="poppins-regular" style={{ fontSize: 16 }}>
+          <p className="poppins-regular problem-agitation-body-text">
             That's when they came up with an idea that would change everything...
           </p>
         </div>

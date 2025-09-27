@@ -15,6 +15,21 @@
   max-width: 50%;
 }
 
+/* Our story specific paragraph styling */
+.our-story-headline {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.our-story-body-text {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.our-story-body-text:last-child {
+  margin-bottom: 0;
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .our-story-container {
@@ -32,20 +47,20 @@
     margin: 0 auto;
   }
   
-  .headline-section p {
+  .our-story-headline {
     font-size: 32px !important;
     line-height: 1.2;
     margin-bottom: 20px !important;
   }
   
-  .headline-section p:nth-child(2) {
+  .our-story-body-text {
     font-size: 18px !important;
     line-height: 1.4;
+    margin-bottom: 20px !important;
   }
   
-  .headline-section span {
-    font-size: 18px !important;
-    line-height: 1.4;
+  .our-story-body-text:last-child {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -54,18 +69,20 @@
     gap: 16px;
   }
   
-  .headline-section p {
+  .our-story-headline {
     font-size: 28px !important;
     line-height: 1.1;
     margin-bottom: 16px !important;
   }
   
-  .headline-section p:nth-child(2) {
+  .our-story-body-text {
     font-size: 16px !important;
+    line-height: 1.4;
+    margin-bottom: 16px !important;
   }
   
-  .headline-section span {
-    font-size: 16px !important;
+  .our-story-body-text:last-child {
+    margin-bottom: 0 !important;
   }
   
   .image-section {
@@ -75,12 +92,11 @@
 
 /* Very small screens */
 @media (max-width: 360px) {
-  .headline-section p {
+  .our-story-headline {
     font-size: 24px !important;
   }
   
-  .headline-section p:nth-child(2),
-  .headline-section span {
+  .our-story-body-text {
     font-size: 14px !important;
   }
 }
