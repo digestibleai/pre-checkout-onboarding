@@ -12,12 +12,15 @@
 .headline-section {
   color: rgb(1, 63, 50);
   width: 100%;
+  order: 1;
+  text-align: center;
 }
 
 .input-section {
   display: flex;
   justify-content: center;
   width: 100%;
+  order: 2;
 }
 
 .input-container {
