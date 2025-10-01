@@ -46,7 +46,7 @@
 @media (max-width: 768px) {
   .content-preview-container {
     gap: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .content-row {

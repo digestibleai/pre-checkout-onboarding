@@ -42,6 +42,7 @@
 @media (max-width: 768px) {
   .our-story-container {
     gap: 20px;
+    text-align: left;
   }
   
   .headline-section {
