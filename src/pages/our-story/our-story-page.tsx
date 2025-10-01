@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import image from '../../assets/digestibly_times_sq.jpeg';
 import './our-story-page.css';
 import { NavButton } from '../../components/nav-button/nav-button';
@@ -8,6 +9,7 @@ interface OurStoryPageProps {
 }
 
 const OurStoryPage = ({ onClick }: OurStoryPageProps): React.ReactNode => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="our-story-container">
       <div className="headline-section">
@@ -31,7 +33,7 @@ const OurStoryPage = ({ onClick }: OurStoryPageProps): React.ReactNode => {
         <img src={image} alt="Our Story" />
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text="Next: Join the Movement →" />
+        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Next: Join the Movement →"} />
       </div>
     </div >
   );

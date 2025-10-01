@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { NavButton } from '../../components/nav-button/nav-button';
 import '../../fonts.css';
 import '../../index.css';
@@ -10,6 +11,7 @@ interface PersonalCommitmentPageProps {
 
 const PersonalCommitmentPage = ({ onClick }: PersonalCommitmentPageProps): React.ReactNode => {
   const [goal, setGoal] = useState<string>('');
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const handleSubmit = () => {
     if (goal.trim()) {
@@ -39,7 +41,7 @@ const PersonalCommitmentPage = ({ onClick }: PersonalCommitmentPageProps): React
           />
           <NavButton
             onClick={handleSubmit}
-            text="Submit My Goal →"
+            text={isMobile ? "Submit" : "Submit My Goal →"}
             disabled={!goal.trim()}
           />
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { NavButton } from '../../components/nav-button/nav-button';
 import '../../fonts.css';
 import '../../index.css';
@@ -10,6 +11,7 @@ interface ContentPreviewPageProps {
 }
 
 const ContentPreviewPage = ({ onClick }: ContentPreviewPageProps): React.ReactNode => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="content-preview-container">
       <div className="content-row">
@@ -27,7 +29,7 @@ const ContentPreviewPage = ({ onClick }: ContentPreviewPageProps): React.ReactNo
         <img src={image} alt="Content Preview" />
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text="Start Your AI Transformation! →" />
+        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Start Your AI Transformation! →"} />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import CheckIcon from '@mui/icons-material/Check';
 import { NavButton } from '../../components/nav-button/nav-button';
 import '../../fonts.css';
@@ -16,6 +17,7 @@ const ListBulletIcon = () => {
 }
 
 const ValuePropPage = ({ goal }: ValuePropPageProps): React.ReactNode => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="value-prop-page-container">
       <span className="poppins-black" style={{ color: 'rgb(1, 63, 50)', fontSize: 48 }}>Start Your AI Transformation Today</span>
@@ -55,7 +57,7 @@ const ValuePropPage = ({ goal }: ValuePropPageProps): React.ReactNode => {
           href="https://www.digestibly.ai/offers/rXwTSUjT/checkout"
           target="_blank"
           rel="noopener noreferrer"
-          text="Start my Free Trial! →"
+          text={isMobile ? "Start Free Trial!" : "Start my Free Trial! →"}
         />
       </div>
     </div>

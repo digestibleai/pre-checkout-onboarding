@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { NavButton } from '../../components/nav-button/nav-button';
 import image from '../../assets/problem-agitation.png';
 import '../../fonts.css';
@@ -10,6 +11,8 @@ interface ProblemAgitationPageProps {
 }
 
 const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.ReactNode => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   return (
     <div className="problem-agitation-container">
       <div className="problem-agitation-content-row">
@@ -38,7 +41,7 @@ const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.Rea
         </div>
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text="Next: See What They Built Together →" />
+        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Next: See What They Built Together →"} />
       </div>
     </div>
   );

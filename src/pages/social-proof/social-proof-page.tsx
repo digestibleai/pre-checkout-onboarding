@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { NavButton } from '../../components/nav-button/nav-button';
 import '../../fonts.css';
 import '../../index.css';
@@ -10,6 +11,7 @@ interface SocialProofPageProps {
 }
 
 const SocialProofPage = ({ onClick }: SocialProofPageProps): React.ReactNode => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="social-proof-container">
       <div className="social-proof-content-row">
@@ -37,7 +39,7 @@ const SocialProofPage = ({ onClick }: SocialProofPageProps): React.ReactNode => 
         </div>
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text="Next: See What You'll Master →" />
+        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Next: See What You'll Master →"} />
       </div>
     </div>
   );

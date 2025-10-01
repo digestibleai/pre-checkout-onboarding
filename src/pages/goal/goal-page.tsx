@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { NavButton } from '../../components/nav-button/nav-button';
 import image from '../../assets/goal.png';
 import './goal-page.css';
@@ -9,6 +10,7 @@ interface GoalPageProps {
 }
 
 const GoalPage = ({ goal, onClick }: GoalPageProps): React.ReactNode => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="goal-page-container">
       <div className="content-section">
@@ -27,7 +29,7 @@ const GoalPage = ({ goal, onClick }: GoalPageProps): React.ReactNode => {
         <img src={image} alt="Goal" />
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text="Next: Take a Peek at Our Lessons →" />
+        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Next: Take a Peek at Our Lessons →"} />
       </div>
     </div>
   );
