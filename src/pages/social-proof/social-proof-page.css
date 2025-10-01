@@ -58,7 +58,8 @@
 @media (max-width: 768px) {
   .social-proof-container {
     gap: 20px;
-    text-align: left;
+    text-align: center;
+    padding: 20px 20px 0 20px;
   }
   
   .social-proof-content-row {
@@ -100,6 +101,7 @@
 @media (max-width: 480px) {
   .social-proof-container {
     gap: 16px;
+    padding: 20px 16px 0 16px;
   }
   
   .social-proof-content-row {

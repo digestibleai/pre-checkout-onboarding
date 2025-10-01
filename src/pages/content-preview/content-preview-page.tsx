@@ -22,7 +22,7 @@ const ContentPreviewPage = ({ onClick }: ContentPreviewPageProps): React.ReactNo
           Not another surface-level AI overview. You will achieve your AI goal by learning
           specific tools, workflows, and prompts that work in real business situations.
           In your first 3 days,
-          <b> you'll master AI such as prompting, research and automation with the latest, cutting-edge tools: </b>
+          <b> you'll master things like prompting, research and automation with the latest, cutting-edge tools. </b>
         </p>
       </div>
       <div className="image-section">

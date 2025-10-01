@@ -58,7 +58,7 @@
 @media (max-width: 768px) {
   .goal-page-container {
     gap: 32px;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     text-align: center;
   }
   
@@ -118,7 +118,7 @@
 @media (max-width: 480px) {
   .goal-page-container {
     gap: 24px;
-    padding: 16px;
+    padding: 20px 16px 0 16px;
   }
   
   .content-section {

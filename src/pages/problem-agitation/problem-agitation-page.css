@@ -48,8 +48,8 @@
 @media (max-width: 768px) {
   .problem-agitation-container {
     gap: 20px;
-    text-align: left;
-    padding: 20px;
+    text-align: center;
+    padding: 20px 20px 0 20px;
     min-height: auto;
     width: 100%;
     box-sizing: border-box;
@@ -105,7 +105,7 @@
 @media (max-width: 480px) {
   .problem-agitation-container {
     gap: 16px;
-    padding: 16px;
+    padding: 20px 16px 0 16px;
   }
   
   .problem-agitation-content-row {

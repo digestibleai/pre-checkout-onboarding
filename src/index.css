@@ -29,10 +29,6 @@ p {
   body {
     min-height: 100vh;
   }
-  
-  .headline {
-    text-align: left;
-  }
 }
 
 @media (max-width: 480px) {

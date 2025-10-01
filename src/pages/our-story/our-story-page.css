@@ -42,7 +42,8 @@
 @media (max-width: 768px) {
   .our-story-container {
     gap: 20px;
-    text-align: left;
+    text-align: center;
+    padding: 20px 20px 0 20px;
   }
   
   .headline-section {
@@ -75,6 +76,7 @@
   .our-story-container {
     display: flex;
     gap: 16px;
+    padding: 20px 16px 0 16px;
   }
   
   .our-story-headline {
