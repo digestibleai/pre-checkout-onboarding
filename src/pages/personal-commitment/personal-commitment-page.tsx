@@ -19,7 +19,7 @@ const PersonalCommitmentPage = ({ onClick }: PersonalCommitmentPageProps): React
 
   return (
     <div className="personal-commitment-container">
-      <div className="headline">
+      <div className="headline-section">
         <p className="poppins-black personal-commitment-headline">
           What's Your AI Learning Goal?
         </p>

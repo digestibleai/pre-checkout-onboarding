@@ -17,7 +17,7 @@ const ListBulletIcon = () => {
 
 const ValuePropPage = ({ goal }: ValuePropPageProps): React.ReactNode => {
   return (
-    <>
+    <div className="value-prop-page-container">
       <span className="poppins-black" style={{ color: 'rgb(1, 63, 50)', fontSize: 48 }}>Start Your AI Transformation Today</span>
       <div className="containers-wrapper">
         <div className="goal-container">
@@ -58,7 +58,7 @@ const ValuePropPage = ({ goal }: ValuePropPageProps): React.ReactNode => {
           text="Start my Free Trial! →"
         />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -6,9 +6,11 @@
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  padding-top: 60px;
 }
 
 .headline-section {
+  color: rgb(1, 63, 50);
   width: 100%;
 }
 
@@ -67,7 +69,7 @@
 @media (max-width: 768px) {
   .personal-commitment-container {
     gap: 32px;
-    padding: 0 20px;
+    padding: 60px 20px 0 20px;
   }
   
   .personal-commitment-headline {
@@ -99,7 +101,7 @@
 @media (max-width: 480px) {
   .personal-commitment-container {
     gap: 24px;
-    padding: 0 16px;
+    padding: 60px 16px 0 16px;
   }
   
   .personal-commitment-headline {
