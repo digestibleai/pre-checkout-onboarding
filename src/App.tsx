@@ -38,6 +38,8 @@ const App = (): React.ReactNode => {
     if (newPage === displayPage) return;
 
     setIsTransitioning(true);
+    // Scroll to top immediately when page change starts
+    window.scrollTo(0, 0);
 
     setTimeout(() => {
       setDisplayPage(newPage);
