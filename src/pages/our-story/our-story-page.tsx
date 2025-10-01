@@ -10,7 +10,7 @@ interface OurStoryPageProps {
 const OurStoryPage = ({ onClick }: OurStoryPageProps): React.ReactNode => {
   return (
     <div className="our-story-container">
-      <div className="headline-section" style={{ textAlign: 'center' }}>
+      <div className="headline-section">
         <span className="poppins-black our-story-headline" style={{ color: 'rgb(1, 63, 50)' }}>
           We Launched at $29/Month... <br />
           Then Realized We Were Still Part of the Problem...
