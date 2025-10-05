@@ -15,14 +15,14 @@ const GoalPage = ({ goal, onClick }: GoalPageProps): React.ReactNode => {
     <div className="goal-page-container">
       <div className="content-section">
         <p className="poppins-black goal-headline" style={{ color: 'rgb(1, 63, 50)' }}>
-          We Update Our Lessons Every Week
+          Your Roadmap Updates Weekly
         </p>
-        <span className="poppins-extrabold goal-subheading" style={{ color: 'rgb(1, 63, 50)' }}> Your AI Goal: </span>
+        <span className="poppins-extrabold goal-subheading" style={{ color: 'rgb(1, 63, 50)' }}> Your Goal: </span>
         <p className="poppins-regular-italic goal-user-goal" style={{ color: 'rgb(1, 63, 50)' }}>
           {goal}
         </p>
         <p className="poppins-regular goal-body-text">
-          We have the <b>exact, up-to-date roadmap to get you there.</b> Not just theory from 2023.
+          We have your exact path. Updated every <b> week </b> with the latest tools.
         </p>
       </div>
       <div className="image-section">
