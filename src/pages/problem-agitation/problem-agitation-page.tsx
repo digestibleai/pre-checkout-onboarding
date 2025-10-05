@@ -18,26 +18,24 @@ const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.Rea
       <div className="problem-agitation-content-row">
         <div className="headline-section">
           <p className="poppins-black problem-agitation-headline" style={{ color: 'rgb(1, 63, 50)' }}>
-            While You're Reading
-            This, Your Colleagues Are
-            Already 3x More Productive
+            Your Coworkers Are Using AI.
+            You're Not.
           </p>
           <p className="poppins-regular problem-agitation-body-text">
-            Kevin was shipping AI models at AWS that generated $20M+ in revenue. Reyhan builds AI systems for Fortune 500 companies.
+            Kevin built AI at AWS ($20M revenue). Reyhan built AI for Fortune 500 companies.
           </p>
           <p className="poppins-regular problem-agitation-body-text">
-            But they kept witnessing the same frustrating pattern: brilliant professionals watching from the sidelines
-            as their tech-savvy colleagues leveraged AI to work faster, smarter, and get promoted first.
+            They saw the same thing everywhere: Smart people stuck on the sidelines while others used AI to work faster and get promoted
+            </p>
+          <p className="poppins-regular problem-agitation-body-text">
+            Why? AI learning was too hard or too expensive.
           </p>
           <p className="poppins-regular problem-agitation-body-text">
-            The reason? AI education was either impossibly technical or ridiculously expensive
-          </p>
-          <p className="poppins-regular problem-agitation-body-text">
-            That's when they came up with an idea that would change everything...
+            So they fixed it.
           </p>
         </div>
         <div className="image-section">
-          <img src={image} alt="Problem Agitation" />
+          <img src={image} alt="Problem Agitation" className="problem-agitation-image" />
         </div>
       </div>
       <div className="button-section">
