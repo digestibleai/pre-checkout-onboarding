@@ -35,7 +35,7 @@ const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.Rea
           </p>
         </div>
         <div className="image-section">
-          <img src={image} alt="Problem Agitation" />
+          <img src={image} alt="Problem Agitation" className="problem-agitation-image" />
         </div>
       </div>
       <div className="button-section">
