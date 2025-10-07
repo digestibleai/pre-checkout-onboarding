@@ -1,0 +1,307 @@
+import React, { useState } from 'react';
+import './gamified-lesson.css';
+
+interface GamifiedLessonProps {
+  onComplete?: () => void;
+}
+
+const GamifiedLesson = ({ onComplete }: GamifiedLessonProps): React.ReactNode => {
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set());
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+  const [selectedAnswers, setSelectedAnswers] = useState<{[key: number]: boolean}>({});
+
+  const totalQuestions = 3;
+
+  const flipCard = (cardIndex: number) => {
+    const wasFlipped = flippedCards.has(cardIndex);
+
+    if (activeCard !== null && activeCard !== cardIndex) {
+      setFlippedCards(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(activeCard);
+        return newSet;
+      });
+    }
+
+    setFlippedCards(prev => {
+      const newSet = new Set(prev);
+      if (wasFlipped) {
+        newSet.delete(cardIndex);
+      } else {
+        newSet.add(cardIndex);
+      }
+      return newSet;
+    });
+
+    setActiveCard(wasFlipped ? null : cardIndex);
+  };
+
+  const resetCards = () => {
+    setFlippedCards(new Set());
+    setActiveCard(null);
+  };
+
+  const checkAnswer = (isCorrect: boolean, questionNum: number, optionIndex: number) => {
+    if (answeredQuestions.has(questionNum)) return;
+
+    setAnsweredQuestions(prev => new Set(prev).add(questionNum));
+    setSelectedAnswers(prev => ({ ...prev, [questionNum]: isCorrect }));
+
+    if (isCorrect) {
+      const newCorrectCount = correctAnswers + 1;
+      setCorrectAnswers(newCorrectCount);
+    }
+
+    // Check if all questions are answered (after state update)
+    const newAnsweredCount = answeredQuestions.size + 1;
+    if (newAnsweredCount === totalQuestions) {
+      setTimeout(() => {
+        document.getElementById('completionSection')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1000);
+    }
+  };
+
+  const getBrainNeurons = () => {
+    const neurons: string[] = [];
+    const connections: string[] = [];
+
+    if (correctAnswers >= 1) {
+      neurons.push('neuron1', 'neuron2', 'neuron3', 'neuron10', 'neuron11');
+      connections.push('conn1', 'conn2', 'conn11', 'conn12');
+    }
+    if (correctAnswers >= 2) {
+      neurons.push('neuron4', 'neuron5', 'neuron6', 'neuron12', 'neuron13', 'neuron14');
+      connections.push('conn3', 'conn4', 'conn5', 'conn6', 'conn13', 'conn14', 'conn15', 'conn21');
+    }
+    if (correctAnswers >= 3) {
+      neurons.push('neuron7', 'neuron8', 'neuron9', 'neuron15', 'neuron16', 'neuron17', 'neuron18');
+      connections.push('conn7', 'conn8', 'conn9', 'conn10', 'conn16', 'conn17', 'conn18', 'conn19', 'conn20', 'conn22');
+    }
+
+    return { neurons, connections };
+  };
+
+  const { neurons: activeNeurons, connections: activeConnections } = getBrainNeurons();
+  const progressPercent = (correctAnswers / totalQuestions) * 100;
+
+  const feedbackMessages = [
+    {
+      success: 'This prompt includes specificity (3 sentences, professional tone) and clear context (declining while maintaining relationships). AI knows exactly what to deliver!',
+      error: 'This prompt is too vague. AI doesn\'t know the tone, length, or purpose. You\'d likely get something generic that needs heavy editing.'
+    },
+    {
+      success: 'Perfect! This prompt has a clear task (analyze), specific output (top 3 trends), and context (Q3, with numbers). No guessing needed!',
+      error: 'Too generic! AI doesn\'t know what to look for, what time period, or what format you want. You\'d waste time clarifying.'
+    },
+    {
+      success: 'Excellent choice! This prompt provides context (10-year-old audience), uses an analogy (library), and has a clear task. The AI can tailor complexity perfectly!',
+      error: 'This lacks context and specificity. AI doesn\'t know your knowledge level or how to explain it. The response could be too technical or too simple.'
+    }
+  ];
+
+  const flashcards = [
+    { term: 'Specificity', definition: 'Be precise about what you want. Instead of "write content," say "write a 300-word blog intro about AI tools for marketers in a conversational tone."' },
+    { term: 'Clear Task', definition: 'Define the exact action and format. "Analyze" is vague - "Identify the top 3 trends with percentages" is clear and actionable.' },
+    { term: 'Context', definition: 'Provide background: audience level, purpose, constraints. "Explain for a 10-year-old" vs. "Explain for a PhD student" yields completely different results.' }
+  ];
+
+  const quizzes = [
+    { icon: '✉️', title: 'Scenario 1: Email Writing', question: 'You need to decline a meeting invitation. Which prompt works better?', options: ['Write an email', 'Write a 3-sentence professional email declining a meeting, keeping the relationship warm'] },
+    { icon: '📊', title: 'Scenario 2: Data Analysis', question: 'You have a sales spreadsheet to review. Which prompt works better?', options: ['Look at this spreadsheet', 'Analyze this sales data for the top 3 revenue trends in Q3 with specific numbers'] },
+    { icon: '🎓', title: 'Scenario 3: Learning Something New', question: 'You want to understand AI concepts. Which prompt works better?', options: ['Explain AI to me', 'Explain how large language models work using a library analogy for a 10-year-old'] }
+  ];
+
+  return (
+    <div className="gamified-lesson-wrapper">
+      <div className="brain-tracker">
+        <div className="brain-container">
+          <svg className="brain-svg" viewBox="0 0 120 100">
+            <path className="brain-outline" d="M 25 40 Q 20 25, 30 15 Q 45 5, 55 10 Q 58 8, 62 10 Q 72 5, 87 15 Q 97 25, 92 40 Q 95 50, 92 60 Q 90 75, 75 85 Q 65 90, 60 88 Q 55 90, 45 85 Q 30 75, 28 60 Q 25 50, 25 40 Z"/>
+            <path className="brain-outline" d="M 60 10 Q 60 30, 60 88" strokeDasharray="3,3" />
+
+            {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18].map(num => {
+              const positions: {[key: number]: {cx: number, cy: number}} = {
+                1: {cx: 35, cy: 25}, 2: {cx: 45, cy: 22}, 3: {cx: 32, cy: 38},
+                4: {cx: 42, cy: 40}, 5: {cx: 50, cy: 35}, 6: {cx: 38, cy: 52},
+                7: {cx: 48, cy: 55}, 8: {cx: 40, cy: 68}, 9: {cx: 50, cy: 70},
+                10: {cx: 72, cy: 22}, 11: {cx: 82, cy: 25}, 12: {cx: 75, cy: 40},
+                13: {cx: 67, cy: 35}, 14: {cx: 85, cy: 38}, 15: {cx: 69, cy: 55},
+                16: {cx: 79, cy: 52}, 17: {cx: 67, cy: 70}, 18: {cx: 77, cy: 68}
+              };
+              return (
+                <circle
+                  key={`neuron${num}`}
+                  className={`neuron ${activeNeurons.includes(`neuron${num}`) ? 'active' : 'inactive'}`}
+                  id={`neuron${num}`}
+                  cx={positions[num].cx}
+                  cy={positions[num].cy}
+                  r="3.5"
+                />
+              );
+            })}
+
+            {[
+              {id: 1, x1: 35, y1: 25, x2: 45, y2: 22},
+              {id: 2, x1: 35, y1: 25, x2: 32, y2: 38},
+              {id: 3, x1: 45, y1: 22, x2: 50, y2: 35},
+              {id: 4, x1: 32, y1: 38, x2: 42, y2: 40},
+              {id: 5, x1: 42, y1: 40, x2: 50, y2: 35},
+              {id: 6, x1: 42, y1: 40, x2: 38, y2: 52},
+              {id: 7, x1: 50, y1: 35, x2: 48, y2: 55},
+              {id: 8, x1: 38, y1: 52, x2: 48, y2: 55},
+              {id: 9, x1: 38, y1: 52, x2: 40, y2: 68},
+              {id: 10, x1: 48, y1: 55, x2: 50, y2: 70},
+              {id: 11, x1: 72, y1: 22, x2: 82, y2: 25},
+              {id: 12, x1: 72, y1: 22, x2: 67, y2: 35},
+              {id: 13, x1: 82, y1: 25, x2: 85, y2: 38},
+              {id: 14, x1: 67, y1: 35, x2: 75, y2: 40},
+              {id: 15, x1: 75, y1: 40, x2: 85, y2: 38},
+              {id: 16, x1: 75, y1: 40, x2: 79, y2: 52},
+              {id: 17, x1: 67, y1: 35, x2: 69, y2: 55},
+              {id: 18, x1: 69, y1: 55, x2: 79, y2: 52},
+              {id: 19, x1: 69, y1: 55, x2: 67, y2: 70},
+              {id: 20, x1: 79, y1: 52, x2: 77, y2: 68},
+              {id: 21, x1: 50, y1: 35, x2: 67, y2: 35},
+              {id: 22, x1: 48, y1: 55, x2: 69, y2: 55}
+            ].map(conn => (
+              <line
+                key={`conn${conn.id}`}
+                className={`connection ${activeConnections.includes(`conn${conn.id}`) ? 'active' : ''}`}
+                id={`conn${conn.id}`}
+                x1={conn.x1}
+                y1={conn.y1}
+                x2={conn.x2}
+                y2={conn.y2}
+              />
+            ))}
+          </svg>
+
+          <div className="brain-info">
+            <div className="brain-title">🧠 Mastering AI Communication</div>
+            <div className="brain-progress"><span id="correctCount">{correctAnswers}</span> of {totalQuestions} prompting principles learned</div>
+            <div className="progress-bar">
+              <div className="progress-fill" style={{ width: `${progressPercent}%` }} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="lesson-content">
+        <div className="lesson-section">
+          <h1 className="lesson-heading">The Secret to 10x Better AI Results</h1>
+          <p className="lesson-subheading">Master prompting in 3 minutes with these real-world examples</p>
+
+          <p className="lesson-text">
+            Most people get mediocre results from AI because they use vague prompts. The difference between "Write an email" and a well-crafted prompt can be the difference between spending 30 minutes editing... or getting perfect output in 30 seconds.
+          </p>
+          <p className="lesson-text">
+            <strong>The secret?</strong> Great prompts have three key elements: specificity, clear task definition, and context. Let&apos;s explore these principles with interactive flashcards.
+          </p>
+        </div>
+
+        <div className="flashcard-container">
+          <div className="flashcard-header">
+            <div className="flashcard-icon">🎴</div>
+            <div className="flashcard-title">Three Pillars of Great Prompts</div>
+          </div>
+
+          <div className="flashcard-grid">
+            {flashcards.map((card, index) => (
+              <div
+                key={index}
+                className={`flashcard ${flippedCards.has(index) ? 'flipped' : ''} ${activeCard === index ? 'spotlight' : ''} ${activeCard !== null && activeCard !== index ? 'blurred' : ''}`}
+                onClick={() => flipCard(index)}
+              >
+                <div className="flashcard-inner">
+                  <div className="flashcard-front">
+                    <div className="flashcard-term">{card.term}</div>
+                    <div className="flashcard-hint">Click to reveal</div>
+                  </div>
+                  <div className="flashcard-back">
+                    <div className="flashcard-definition">{card.definition}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flashcard-instruction">💡 Click any card to see examples</div>
+          <button className="reset-btn" onClick={resetCards}>Reset All Cards</button>
+        </div>
+
+        <div className="lesson-section">
+          <p className="lesson-text">
+            Now that you understand the three pillars, let&apos;s test your knowledge with real-world scenarios. Each question shows you exactly how these principles work in practice.
+          </p>
+          <p className="lesson-text">
+            <strong>Your challenge:</strong> Choose the better prompt in each scenario. Watch how your brain lights up as you master each principle!
+          </p>
+        </div>
+
+        {quizzes.map((quiz, qIndex) => {
+          const questionNum = qIndex + 1;
+          const isAnswered = answeredQuestions.has(questionNum);
+          const wasCorrect = selectedAnswers[questionNum];
+
+          return (
+            <div key={questionNum} className="quiz-container">
+              <div className="quiz-header">
+                <div className="quiz-icon">{quiz.icon}</div>
+                <div className="quiz-title">{quiz.title}</div>
+              </div>
+
+              <div className="quiz-question">{quiz.question}</div>
+
+              <div className="quiz-options">
+                {quiz.options.map((option, optIndex) => {
+                  const isCorrect = optIndex === 1;
+                  const wasSelected = isAnswered && ((wasCorrect && isCorrect) || (!wasCorrect && !isCorrect));
+
+                  return (
+                    <div
+                      key={optIndex}
+                      className={`quiz-option ${isAnswered ? 'disabled' : ''} ${wasSelected && isCorrect ? 'correct' : ''} ${wasSelected && !isCorrect ? 'incorrect' : ''}`}
+                      onClick={() => !isAnswered && checkAnswer(isCorrect, questionNum, optIndex)}
+                    >
+                      {option}
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div id={`feedback${questionNum}`} className={`quiz-feedback ${isAnswered ? 'show' : ''} ${wasCorrect ? 'success' : 'error'}`}>
+                <div className="quiz-feedback-title">
+                  {wasCorrect ? '✅ Correct!' : '❌ Not quite!'}
+                </div>
+                <div className="quiz-feedback-text">
+                  {isAnswered ? (wasCorrect ? feedbackMessages[qIndex].success : feedbackMessages[qIndex].error) : ''}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+
+        <div className={`completion-section ${answeredQuestions.size === totalQuestions ? 'show' : ''}`} id="completionSection">
+          <div className="completion-title">
+            {correctAnswers === totalQuestions ? '🎉 Congratulations! Your Brain is Fully Lit!' : '🧠 Ready to Master AI?'}
+          </div>
+          <div className="completion-text">
+            {correctAnswers === totalQuestions
+              ? "You just learned the three pillars of effective AI prompting: specificity, clear task definition, and context. These principles will save you hours every week and unlock AI's full potential."
+              : "You've seen how powerful great prompting can be. Imagine mastering 50+ more techniques like this."}
+          </div>
+          <div className="completion-text">
+            {correctAnswers === totalQuestions
+              ? "Want to learn 50+ more techniques like this? Our full course gives you frameworks, templates, and real-world examples for every use case."
+              : "Our full course gives you frameworks, templates, and real-world examples to unlock AI's full potential in every use case."}
+          </div>
+          <button className="cta-button" onClick={() => onComplete?.()}>Start Full Course Now →</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { GamifiedLesson };

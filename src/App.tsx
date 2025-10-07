@@ -7,6 +7,7 @@ import { SocialProofPage } from './pages/social-proof/social-proof-page';
 import { ContentPreviewPage } from './pages/content-preview/content-preview-page';
 import { ValuePropPage } from './pages/value-prop/value-prop-page';
 import { GoalPage } from './pages/goal/goal-page';
+import { GamifiedLesson } from './pages/gamified-lesson/gamified-lesson';
 import './fonts.css'
 import './App.css'
 import { ImagePreloader } from './components/ImagePreloader/ImagePreloader';
@@ -52,7 +53,9 @@ const App = (): React.ReactNode => {
       case 'problem-agitation':
         return <ProblemAgitationPage onClick={() => { handlePageChange('our-story') }} />;
       case 'our-story':
-        return <OurStoryPage onClick={() => { handlePageChange('social-proof') }} />;
+        return <OurStoryPage onClick={() => { handlePageChange('gamified-lesson') }} />;
+      case 'gamified-lesson':
+        return <GamifiedLesson onComplete={() => { handlePageChange('social-proof') }} />;
       case 'personal-commitment':
         return <PersonalCommitmentPage onClick={(userGoal: string) => {
           setGoal(userGoal);
