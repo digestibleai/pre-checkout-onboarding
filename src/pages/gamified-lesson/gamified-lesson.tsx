@@ -43,7 +43,7 @@ const GamifiedLesson = ({ onComplete }: GamifiedLessonProps): React.ReactNode =>
     setActiveCard(null);
   };
 
-  const checkAnswer = (isCorrect: boolean, questionNum: number, optionIndex: number) => {
+  const checkAnswer = (isCorrect: boolean, questionNum: number) => {
     if (answeredQuestions.has(questionNum)) return;
 
     setAnsweredQuestions(prev => new Set(prev).add(questionNum));
@@ -255,15 +255,15 @@ const GamifiedLesson = ({ onComplete }: GamifiedLessonProps): React.ReactNode =>
               <div className="quiz-question">{quiz.question}</div>
 
               <div className="quiz-options">
-                {quiz.options.map((option, optIndex) => {
-                  const isCorrect = optIndex === 1;
+                {quiz.options.map((option, optionIndex) => {
+                  const isCorrect = optionIndex === 1;
                   const wasSelected = isAnswered && ((wasCorrect && isCorrect) || (!wasCorrect && !isCorrect));
 
                   return (
                     <div
-                      key={optIndex}
+                      key={optionIndex}
                       className={`quiz-option ${isAnswered ? 'disabled' : ''} ${wasSelected && isCorrect ? 'correct' : ''} ${wasSelected && !isCorrect ? 'incorrect' : ''}`}
-                      onClick={() => !isAnswered && checkAnswer(isCorrect, questionNum, optIndex)}
+                      onClick={() => !isAnswered && checkAnswer(isCorrect, questionNum)}
                     >
                       {option}
                     </div>
