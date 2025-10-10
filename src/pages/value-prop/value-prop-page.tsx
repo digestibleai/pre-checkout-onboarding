@@ -31,23 +31,23 @@ const ValuePropPage = ({ goal }: ValuePropPageProps): React.ReactNode => {
           <img src={Arrow} alt="Arrow" />
         </div>}
         <div className="value-prop-container">
-          <p className="poppins-extrabold price-text"><s>$29</s> $5.99/month</p>
+          <p className="poppins-extrabold price-text">3 Day Free Trial</p>
           <ul className="features-list">
             <li className="feature-item">
               <ListBulletIcon />
-              <span className="poppins-regular">Access to all AI tools and workflows</span>
+              <span className="poppins-regular"><b>100+ AI lessons</b> covering fundamentals, agents, LLMs, prompts & automations</span>
             </li>
             <li className="feature-item">
               <ListBulletIcon />
-              <span className="poppins-regular">Personalized learning path for your goal</span>
+              <span className="poppins-regular"><b>Weekly content updates</b>to keep all lessons current with AI changes</span>
             </li>
             <li className="feature-item">
               <ListBulletIcon />
-              <span className="poppins-regular">Weekly progress tracking and insights</span>
+              <span className="poppins-regular"><b>New lessons every month</b> (20+) on emerging AI topics</span>
             </li>
             <li className="feature-item">
               <ListBulletIcon />
-              <span className="poppins-regular">Cancel anytime, no questions asked</span>
+              <span className="poppins-regular"><b>Cancel anytime</b> - no long-term contracts</span>
             </li>
           </ul>
         </div>

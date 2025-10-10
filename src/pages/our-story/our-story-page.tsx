@@ -31,7 +31,7 @@ const OurStoryPage = ({ onClick }: OurStoryPageProps): React.ReactNode => {
         <img src={image} alt="Our Story" />
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Next: Join the Movement →"} />
+        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Next: See What They Built →"} />
       </div>
     </div >
   );

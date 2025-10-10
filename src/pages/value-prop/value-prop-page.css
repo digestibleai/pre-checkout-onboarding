@@ -30,6 +30,10 @@
   width: 300px;
 }
 
+.value-prop-container .price-text {
+text-align: center;
+}
+
 .arrow-container {
   display: flex;
   align-items: center;
