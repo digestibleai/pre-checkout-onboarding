@@ -35,7 +35,7 @@ const SocialProofPage = ({ onClick }: SocialProofPageProps): React.ReactNode => 
         </div>
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Next: See What You'll Master →"} />
+        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Next: Decide Your AI Goal →"} />
       </div>
     </div>
   );

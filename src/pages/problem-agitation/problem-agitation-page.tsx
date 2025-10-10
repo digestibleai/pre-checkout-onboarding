@@ -39,7 +39,7 @@ const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.Rea
         </div>
       </div>
       <div className="button-section">
-        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Next: See What They Built Together →"} />
+        <NavButton onClick={onClick} text={isMobile ? "Continue" : "Get Started →"} />
       </div>
     </div>
   );
