@@ -33,11 +33,6 @@ const Flashcards = ({ onNext }: FlashcardsProps): React.ReactNode => {
     setActiveCard(wasFlipped ? null : cardIndex);
   };
 
-  const resetCards = () => {
-    setFlippedCards(new Set());
-    setActiveCard(null);
-  };
-
   const flashcards = [
     { term: 'Specificity', definition: 'Be precise about what you want. Instead of "write content," say "write a 300-word blog intro about AI tools for marketers in a conversational tone."' },
     { term: 'Clear Task', definition: 'Define the exact action and format. "Analyze" is vague - "Identify the top 3 trends with percentages" is clear and actionable.' },
