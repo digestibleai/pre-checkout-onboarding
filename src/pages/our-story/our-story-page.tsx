@@ -14,17 +14,16 @@ const OurStoryPage = ({ onClick }: OurStoryPageProps): React.ReactNode => {
     <div className="our-story-container">
       <div className="headline-section">
         <span className="poppins-black our-story-headline" style={{ color: 'rgb(1, 63, 50)' }}>
-          We Dropped Our Price 80%
+          We Built Simple, but Powerful AI Education
         </span>
       </div>
       <div className="poppins-regular content-section">
         <p className="our-story-body-text">
           We launched at $29/month.
-          Teachers and small business owners couldn't afford it. We were the problem we wanted to solve.
+          Teachers and small business owners couldn't afford it.
         </p>
         <p className="our-story-body-text">
           So we dropped to <b> $5.99/month</b>. Less than Netflix. Less than coffee.
-          Our goal: Teach 1 million people AI.
         </p>
       </div>
       <div className="image-section">

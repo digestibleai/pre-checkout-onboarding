@@ -22,16 +22,13 @@ const ProblemAgitationPage = ({ onClick }: ProblemAgitationPageProps): React.Rea
             You're Not.
           </p>
           <p className="poppins-regular problem-agitation-body-text">
-            Kevin built AI at AWS ($20M revenue). Reyhan built AI for Fortune 500 companies.
+            Kevin built AI at AWS. Reyhan built AI for Fortune 500 companies.
           </p>
           <p className="poppins-regular problem-agitation-body-text">
-            They saw the same thing everywhere: Smart people stuck on the sidelines while others used AI to work faster and get promoted
+            They saw the same thing everywhere: Smart people getting left behind
             </p>
           <p className="poppins-regular problem-agitation-body-text">
-            Why? AI learning was too hard or too expensive.
-          </p>
-          <p className="poppins-regular problem-agitation-body-text">
-            So they fixed it.
+            Why? AI was creating a knowledge divide
           </p>
         </div>
         <div className="image-section">

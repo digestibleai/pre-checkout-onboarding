@@ -416,7 +416,6 @@
 }
 
 .completion-section {
-    background: #072d24;
     color: white;
     border-radius: 12px;
     padding: 40px;
@@ -444,8 +443,8 @@
 }
 
 .cta-button {
-    background: white;
-    color: #072d24;
+    background: #072d24;
+    color: white;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 700;

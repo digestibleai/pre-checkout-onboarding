@@ -203,24 +203,8 @@ const GamifiedLesson = ({ onComplete }: GamifiedLessonProps): React.ReactNode =>
           );
         })}
 
-        <div className={`completion-section ${answeredQuestions.size === totalQuestions ? 'show' : ''}`} id="completionSection">
-          {correctAnswers === totalQuestions ? (
-            <>
-              <div className="completion-title">🎉 Congratulations! Your Brain is Fully Lit!</div>
-              <div className="completion-text">
-                You just learned the three pillars of effective AI prompting: specificity, clear task definition, and context. These principles will save you hours every week and unlock AI&apos;s full potential.
-              </div>
-              <div className="completion-text">
-                Want to learn 50+ more techniques like this? Our full course gives you frameworks, templates, and real-world examples for every use case.
-              </div>
-              <button className="cta-button" onClick={() => onComplete?.()}>Start Full Course Now →</button>
-            </>
-          ) : (
-            <>
-              <div className="completion-title">Looks like you need more help becoming an AI whisperer!</div>
+        <div className="completion-section show" id="completionSection">
               <button className="cta-button" onClick={() => onComplete?.()}>Continue</button>
-            </>
-          )}
         </div>
       </div>
     </div>
