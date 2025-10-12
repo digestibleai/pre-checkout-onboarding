@@ -154,10 +154,6 @@ const GamifiedLesson = ({ onComplete }: GamifiedLessonProps): React.ReactNode =>
       <div className="lesson-content">
         <div className="lesson-section">
           <h1 className="lesson-heading">Practice with Real Scenarios</h1>
-
-          <p className="lesson-text">
-            <strong>Your challenge:</strong> Apply what you learned about specificity, clear tasks, and context. Watch how your brain lights up as you master each principle!
-          </p>
         </div>
 
         {quizzes.map((quiz, qIndex) => {
