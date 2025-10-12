@@ -5,7 +5,6 @@ import { OurStoryPage } from './pages/our-story/our-story-page';
 import { PersonalCommitmentPage } from './pages/personal-commitment/personal-commitment-page';
 import { SocialProofPage } from './pages/social-proof/social-proof-page';
 import { ValuePropPage } from './pages/value-prop/value-prop-page';
-import { GoalPage } from './pages/goal/goal-page';
 import { Flashcards } from './pages/flashcards/flashcards';
 import { GamifiedLesson } from './pages/gamified-lesson/gamified-lesson';
 import './fonts.css'
