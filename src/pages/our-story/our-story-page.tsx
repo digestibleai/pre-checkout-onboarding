@@ -12,7 +12,7 @@ const OurStoryPage = ({ onClick }: OurStoryPageProps): React.ReactNode => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="our-story-container">
-      <div className="headline-section">
+      <div className="story-headline-section">
         <span className="poppins-black our-story-headline" style={{ color: 'rgb(1, 63, 50)' }}>
           We Built Simple, but Powerful AI Education
         </span>
@@ -26,7 +26,7 @@ const OurStoryPage = ({ onClick }: OurStoryPageProps): React.ReactNode => {
           So we dropped to <b> $5.99/month</b>. Less than Netflix. Less than coffee.
         </p>
       </div>
-      <div className="image-section">
+      <div className="story-image-section">
         <img src={image} alt="Our Story" />
       </div>
       <div className="button-section">
