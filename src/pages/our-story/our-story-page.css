@@ -8,7 +8,7 @@
   padding-top: 60px;
 }
 
-.image-section {
+.story-image-section {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -17,9 +17,20 @@
   order: 3;
 }
 
+.story-image-section img {
+  max-width: 100%;
+  max-height: 100vh;
+  height: auto;
+  object-fit: contain;
+}
+
+.story-headline-section {
+  width: 100%;
+  text-align: center;
+}
+
 .content-section {
   order: 2;
-  text-align: center;
 }
 
 .button-section {
@@ -33,6 +44,7 @@
 
 .our-story-body-text {
   font-size: 16px;
+  text-align: center;
 }
 
 .our-story-body-text:last-child {
@@ -47,11 +59,11 @@
     padding: 20px 20px 0 20px;
   }
   
-  .headline-section {
+  .story-headline-section {
     order: 1;
   }
   
-  .image-section {
+  .story-image-section {
     order: 3;
     max-width: 360px;
     margin: 0 auto;
