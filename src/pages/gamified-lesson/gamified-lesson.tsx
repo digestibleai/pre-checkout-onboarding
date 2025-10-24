@@ -10,7 +10,7 @@ const GamifiedLesson = ({ onComplete }: GamifiedLessonProps): React.ReactNode =>
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set());
   const [selectedAnswers, setSelectedAnswers] = useState<{[key: number]: boolean}>({});
 
-  const totalQuestions = 3;
+  const totalQuestions = 2;
 
   const checkAnswer = (isCorrect: boolean, questionNum: number) => {
     if (answeredQuestions.has(questionNum)) return;
@@ -41,12 +41,8 @@ const GamifiedLesson = ({ onComplete }: GamifiedLessonProps): React.ReactNode =>
       connections.push('conn1', 'conn2', 'conn11', 'conn12');
     }
     if (correctAnswers >= 2) {
-      neurons.push('neuron4', 'neuron5', 'neuron6', 'neuron12', 'neuron13', 'neuron14');
-      connections.push('conn3', 'conn4', 'conn5', 'conn6', 'conn13', 'conn14', 'conn15', 'conn21');
-    }
-    if (correctAnswers >= 3) {
-      neurons.push('neuron7', 'neuron8', 'neuron9', 'neuron15', 'neuron16', 'neuron17', 'neuron18');
-      connections.push('conn7', 'conn8', 'conn9', 'conn10', 'conn16', 'conn17', 'conn18', 'conn19', 'conn20', 'conn22');
+      neurons.push('neuron4', 'neuron5', 'neuron6', 'neuron12', 'neuron13', 'neuron14', 'neuron7', 'neuron8', 'neuron9', 'neuron15', 'neuron16', 'neuron17', 'neuron18');
+      connections.push('conn3', 'conn4', 'conn5', 'conn6', 'conn13', 'conn14', 'conn15', 'conn21', 'conn7', 'conn8', 'conn9', 'conn10', 'conn16', 'conn17', 'conn18', 'conn19', 'conn20', 'conn22');
     }
 
     return { neurons, connections };
@@ -63,17 +59,12 @@ const GamifiedLesson = ({ onComplete }: GamifiedLessonProps): React.ReactNode =>
     {
       success: 'Perfect! This prompt has a clear task (analyze), specific output (top 3 trends), and context (Q3, with numbers). No guessing needed!',
       error: 'Too generic! AI doesn\'t know what to look for, what time period, or what format you want. You\'d waste time clarifying.'
-    },
-    {
-      success: 'Excellent choice! This prompt provides context (10-year-old audience), uses an analogy (library), and has a clear task. The AI can tailor complexity perfectly!',
-      error: 'This lacks context and specificity. AI doesn\'t know your knowledge level or how to explain it. The response could be too technical or too simple.'
     }
   ];
 
   const quizzes = [
     { icon: '✉️', title: 'Scenario 1: Email Writing', question: 'You need to decline a meeting invitation. Which prompt works better?', options: ['Write an email', 'Write a 3-sentence professional email declining a meeting, keeping the relationship warm'] },
-    { icon: '📊', title: 'Scenario 2: Data Analysis', question: 'You have a sales spreadsheet to review. Which prompt works better?', options: ['Look at this spreadsheet', 'Analyze this sales data for the top 3 revenue trends in Q3 with specific numbers'] },
-    { icon: '🎓', title: 'Scenario 3: Learning Something New', question: 'You want to understand AI concepts. Which prompt works better?', options: ['Explain AI to me', 'Explain how large language models work using a library analogy for a 10-year-old'] }
+    { icon: '📊', title: 'Scenario 2: Data Analysis', question: 'You have a sales spreadsheet to review. Which prompt works better?', options: ['Look at this spreadsheet', 'Analyze this sales data for the top 3 revenue trends in Q3 with specific numbers'] }
   ];
 
   return (

@@ -18,7 +18,7 @@ const ValuePropPage = (): React.ReactNode => {
       <span className="poppins-black value-prop-headline">Start Your AI Transformation Today</span>
       <div className="containers-wrapper">
         <div className="value-prop-container">
-          <p className="poppins-extrabold price-text">3 Day Free Trial</p>
+          <p className="poppins-extrabold price-text">Free Trial</p>
           <ul className="features-list">
             <li className="feature-item">
               <ListBulletIcon />

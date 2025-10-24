@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { ProblemAgitationPage } from './pages/problem-agitation/problem-agitation-page'
-import { OurStoryPage } from './pages/our-story/our-story-page';
+import { Flashcards } from './pages/flashcards/flashcards';
 import { ValuePropPage } from './pages/value-prop/value-prop-page';
 import { GamifiedLesson } from './pages/gamified-lesson/gamified-lesson';
 import './fonts.css'
@@ -46,9 +46,9 @@ const App = (): React.ReactNode => {
   const renderPage = () => {
     switch (displayPage) {
       case 'problem-agitation':
-        return <ProblemAgitationPage onClick={() => { handlePageChange('our-story') }} />;
-      case 'our-story':
-        return <OurStoryPage onClick={() => { handlePageChange('gamified-lesson') }} />;
+        return <ProblemAgitationPage onClick={() => { handlePageChange('flashcards') }} />;
+      case 'flashcards':
+        return <Flashcards onNext={() => { handlePageChange('gamified-lesson') }} />;
       case 'gamified-lesson':
         return <GamifiedLesson onComplete={() => { handlePageChange('value-prop') }} />;
       case 'value-prop':
